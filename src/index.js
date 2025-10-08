@@ -4,6 +4,10 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.redirect('/api/health');
+});
+
 app.use('/api', routes);
 
 // Start server only if not in test environment
